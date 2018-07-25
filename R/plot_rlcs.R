@@ -18,7 +18,7 @@ plot_rlcs <- function(dataframe=NA, par='par', parameter='etr', treatment=NA, er
 
   x <- subset(dataframe, dataframe[,treatment] == lev[1])
 
-  par(mar=c(3,3,1,1), mgp=c(1.8,0.3,0), tck=-0.01, las=1)
+  par(mar=c(3,3,1,1), mgp=c(1.8,0.3,0), tck=-0.01, las=1, mfrow=c(1,1))
   plot(x[,par], x[,parameter], ylim=c(0,max.val*1.2), xlab=expression(paste('PAR (',mu,'mol photons ',m^2,' ',s^-1,')')), ylab=toupper(parameter), col=my.cols[1], pch=19, type='o')
   if(!is.na(error)){
     arrows(x[,par], x[,parameter], x[,par], x[,parameter]+x[,error], length=0.05, angle=90, col=my.cols[1])

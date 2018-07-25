@@ -20,7 +20,7 @@ plot_fits <- function(dataframe=NA, par='par'){
 
   max.val <- dataframe[,-which(colnames(dataframe)==par)] %>% max
 
-  par(mar=c(3,3,1,1), mgp=c(1.8,0.3,0), tck=-0.01, las=1)
+  par(mar=c(3,3,1,1), mgp=c(1.8,0.3,0), tck=-0.01, las=1, mfrow=c(1,1))
   plot(plot.par, y, ylim=c(0,max.val*1.2), xlab=expression(paste('PAR (',mu,'mol photons ',m^2,' ',s^-1,')')), ylab='rETR', col=my.cols[1], pch=19, type='l', lwd=1)
   polygon(c(plot.par, rev(plot.par)), c(up, rev(low)), col=addTrans(my.cols[1], 50), border=NA)
 
