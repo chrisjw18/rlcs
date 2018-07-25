@@ -8,5 +8,7 @@ Description: Package containing one function to process RLC data. The rlc_fit fu
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-Imports: magrittr 
+Imports: magrittr, randomcoloR
 RoxygenNote: 6.0.1
+Collate: 'rlc_fit.R' 'plot_rlcs.R' 'predictNLS.R' 'addTrans.R' 'plot_fits.R'
+Depends: R (>= 2.9)

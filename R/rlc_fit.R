@@ -23,13 +23,11 @@
 #'        including standard deviation and standard error
 #'    5. 'av_fits' containing e and p fit of etr ~ par with upper and lower bounds per
 #'        treatment.
-#'@import magrittr
 #'@export
 
 
 rlc_fit<-function(dataframe=NA,par = 'par', yield = 'y', f = 'f', fm. = 'fm.', sample = NA, treatment = NA, predict_ul = T){
 
-  source('./R/predictNLS.R')
 
 
   #calculate number of light curves in dataframe

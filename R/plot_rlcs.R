@@ -6,8 +6,6 @@
 #'@param treatment character string, dataframe column name containing treatment levels
 #'@param error character string, dataframe column name containing SE data
 #'@return plot showing all treatments parameter (+/- SE)
-#'@import magrittr
-#'@import randomcoloR
 #'@export
 
 plot_rlcs <- function(dataframe=NA, par='par', parameter='etr', treatment=NA, error=NA){
