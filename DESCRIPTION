@@ -1,0 +1,12 @@
+Package: rlcs
+Type: Package
+Title: Processes RLC data from Walz Water-PAM outputs
+Version: 0.1.0
+Author: Christopher J. Williamson
+Maintainer: Christopher Williamson <c.williamson@bristol.ac.uk>
+Description: Package containing one function to process RLC data. The rlc_fit function typical variables from light curve par, fluorescence and yield data (rETR, NPQ, YNPQ, YNO) and fits the e and p model to derive parameters (rETRmax, alpha, Ek). Model predictions with upper and lower bounds are provided if requested. The rlc_fit function will also average across treatments if a treatment column is provided, giving average variables, parameters and fits.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Imports: magrittr 
+RoxygenNote: 6.0.1
