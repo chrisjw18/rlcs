@@ -142,7 +142,7 @@ rlc_fit<-function(dataframe=NA,par = 'par', yield = 'y', f = 'f', fm. = 'fm.', s
     treat.catch <- data.frame(par = seq(0, max.par, 10))
     treat.lev <- levels(av[,treatment])
     for(j in 1:length(treat.lev)){
-      t.dat <- subset(av, av[,treatment] == treat.lev[j])
+      t.dat <- subset(av, treatment == treat.lev[j])
       a0<-0.00003; b0<--0.003; c0<-4
       x <- t.dat$par; y <- t.dat$etr
       m1 <- nls(y~x/(A*x^2+B*x+C),start=list(A=a0,B=b0,C=c0))
@@ -166,7 +166,8 @@ rlc_fit<-function(dataframe=NA,par = 'par', yield = 'y', f = 'f', fm. = 'fm.', s
 
 
     #average parameters
-    p.dat <- dataframe[dataframe[,par]==0,]
+    my.min.par <- dataframe[,par] %>% min
+    p.dat <- dataframe[dataframe[,par]==my.min.par,]
     av.param <- aggregate(p.dat$etrmax ~ p.dat[,treatment], FUN=mean)
     colnames(av.param) <- c(treatment, 'etrmax')
     av.param$etrmax_sd <- aggregate(p.dat$etrmax ~ p.dat[,treatment], FUN=sd)[,2]
