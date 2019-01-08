@@ -142,7 +142,7 @@ rlc_fit<-function(dataframe=NA,par = 'par', yield = 'y', f = 'f', fm. = 'fm.', s
     treat.catch <- data.frame(par = seq(0, max.par, 10))
     treat.lev <- levels(av[,treatment])
     for(j in 1:length(treat.lev)){
-      t.dat <- subset(av, treatment == treat.lev[j])
+      t.dat <- av[av[,treatment] == treat.lev[j], ] #changed this line as subset was not working universally.
       a0<-0.00003; b0<--0.003; c0<-4
       x <- t.dat$par; y <- t.dat$etr
       m1 <- nls(y~x/(A*x^2+B*x+C),start=list(A=a0,B=b0,C=c0))
