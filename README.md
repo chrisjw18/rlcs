@@ -1,7 +1,7 @@
 # RLCs - a simple package to process rapid light curves
 
 ## Overview
-This R package provides simple prcessing abilities for (sequential) rapid light curve datasets produced using a Walz WaterPAM fluorometer. It reads in a CSV file of RLC data, calculates key parameters (etr, npq, ynpq, yno), and fits the Eileers and Peters RLC model to the data to derive associated parameters (Fv/Fm, rETRmax, Ek, and alpha). If treatment identifier columns are provided, the package will take averages for each variable across treatment replicates and also fit a cumulative EnP model to the datasets, of predict_ul is set to TRUE, predictions of fit, upper and lower bounds are also provided for all models.
+This R package provides simple prcessing abilities for (sequential) rapid light curve datasets produced using a Walz WaterPAM fluorometer. It reads in a CSV file of RLC data, calculates key parameters (etr, npq, ynpq, yno), and fits the Eileers and Peters RLC model to the data to derive associated parameters (Fv/Fm, rETRmax, Ek, and alpha). If treatment identifier columns are provided, the package will take averages for each variable across treatment replicates and also fit a cumulative EnP model to the datasets, if predict_ul is set to TRUE, predictions of fit, upper and lower bounds are also provided for all models.
 
 ### Installation
 
